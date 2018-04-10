@@ -28,8 +28,6 @@ int main()
   }
   else
   { 
-   teams++; 
-   periods++; 
    scoreKeeper.resize(teams); 
    for (int r= 0; r < scoreKeeper.size(); r++) 
    {
@@ -45,7 +43,8 @@ int main()
      }
    } 
     
-  
+cout<<"SCOREBOARD\n"; 
+
    for (int r = 0; r < scoreKeeper.size(); r++)
    { 
      cout<< "Player " << r + 1<< ": "; 
