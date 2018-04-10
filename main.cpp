@@ -12,6 +12,7 @@ int main()
 {
   int periods;
   int teams;
+  vector<vector<int> > scoreKeeper; 
 
   cout<<"How many competitors? ";
   cin>>teams;
@@ -26,7 +27,36 @@ int main()
     return 0;
   }
   else
-  {
+  { 
+   teams++; 
+   periods++; 
+   scoreKeeper.resize(teams); 
+   for (int r= 0; r < scoreKeeper.size(); r++) 
+   {
+     scoreKeeper[r].resize( periods ); 
+   }
+   
+
+   for (int r=0; r < scoreKeeper.size(); r++) 
+   { 
+     for (int c= 0; c < scoreKeeper[r].size(); c++) 
+     {
+       scoreKeeper[r][c] = 0; 
+     }
+   } 
+    
+  
+   for (int r = 0; r < scoreKeeper.size(); r++)
+   { 
+     cout<< "Player " << r + 1<< ": "; 
+     for (int c = 0; c < scoreKeeper[r].size(); c++) 
+     { 
+       cout << scoreKeeper[r][c] << "|";
+     }
+     cout << endl; 
+   }
+
+
    //make scoreboard and fill it with zeros
   
    //once created, display the scoreboard
