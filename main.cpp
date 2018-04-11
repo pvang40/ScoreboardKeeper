@@ -7,6 +7,7 @@ const int MAX_PERIODS = 10;
 const int MAX_TEAMS = 4;
 const int MIN_PERIODS = 1;
 const int MIN_TEAMS = 1;
+void printScoreboard(vector < vector <int> >); 
 
 int main()
 {
@@ -42,23 +43,28 @@ int main()
        scoreKeeper[r][c] = 0; 
      }
    } 
-    
-cout<<"SCOREBOARD\n"; 
 
-   for (int r = 0; r < scoreKeeper.size(); r++)
+    printScoreboard(scoreKeeper); 
+  } 
+  return 0; 
+ } 
+
+  void printScoreboard(vector< vector<int> > grid) 
+  {
+    cout<<"SCOREBOARD\n"; 
+
+   for (int r = 0; r < grid.size(); r++)
    { 
      cout<< "Player " << r + 1<< ": "; 
-     for (int c = 0; c < scoreKeeper[r].size(); c++) 
+     for (int c = 0; c < grid[r].size(); c++) 
      { 
-       cout << scoreKeeper[r][c] << "|";
+       cout << grid[r][c] << "|";
      }
      cout << endl; 
    }
-
+ } 
 
    //make scoreboard and fill it with zeros
   
    //once created, display the scoreboard
-  }
-  return 0;
-}
+ 
