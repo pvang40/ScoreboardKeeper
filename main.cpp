@@ -7,7 +7,8 @@ const int MAX_PERIODS = 10;
 const int MAX_TEAMS = 4;
 const int MIN_PERIODS = 1;
 const int MIN_TEAMS = 1;
-void printScoreboard(vector < vector <int> >); 
+void printScoreboard(vector < vector <int> >);
+int randomBetween(int, int); 
 
 int main()
 {
@@ -45,6 +46,17 @@ int main()
    } 
 
     printScoreboard(scoreKeeper); 
+ 
+   for (int r=0; r < scoreKeeper.size(); r++) 
+   { 
+     for (int c= 0; c < scoreKeeper[r].size(); c++) 
+     {
+       scoreboard[r][c] = randomBetween(0,9); 
+     }
+   } 
+
+ 
+
   } 
   return 0; 
  } 
@@ -63,7 +75,8 @@ int main()
      cout << endl; 
    }
  } 
-
+ 
+ int randomBetween(int , int) 
    //make scoreboard and fill it with zeros
   
    //once created, display the scoreboard
