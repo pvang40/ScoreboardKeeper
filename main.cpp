@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib> 
+#include<ctime> 
 
 using namespace std;
 
@@ -12,6 +14,7 @@ int randomBetween(int, int);
 
 int main()
 {
+  srand((int) time(0)); 
   int periods;
   int teams;
   vector<vector<int> > scoreKeeper; 
@@ -51,10 +54,10 @@ int main()
    { 
      for (int c= 0; c < scoreKeeper[r].size(); c++) 
      {
-       scoreboard[r][c] = randomBetween(0,9); 
+       scoreKeeper[r][c] = randomBetween(5,5); 
      }
    } 
-
+    printScoreboard(scoreKeeper); 
  
 
   } 
@@ -76,7 +79,17 @@ int main()
    }
  } 
  
- int randomBetween(int , int) 
+ int randomBetween(int first, int second)
+ { 
+  if (first > second) 
+  { 
+  return second + rand()%(first-second+1); 
+  } 
+  else 
+   { 
+      return first + rand()%(second-first+1);
+   } 
+ }
    //make scoreboard and fill it with zeros
   
    //once created, display the scoreboard
